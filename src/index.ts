@@ -191,7 +191,7 @@ interface SceneState {
 }
 
 const sceneState: SceneState = {
-  theme: 'light',
+  theme: 'dark',
   viewport: { x: 0, y: 0, zoom: 1 },
   selectedElements: new Set(),
   groups: new Map()
@@ -1493,7 +1493,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest)
           source: 'mcp-excalidraw-server',
           elements: sceneElements,
           appState: {
-            viewBackgroundColor: '#ffffff',
+            theme: 'dark',
+            viewBackgroundColor: '#1e1e2e',
             gridSize: null
           },
           ...(Object.keys(sceneFiles).length > 0 ? { files: sceneFiles } : {})
@@ -2099,7 +2100,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest)
           source: 'https://excalidraw.com',
           elements: cleanedExportElements,
           appState: {
-            viewBackgroundColor: '#ffffff',
+            theme: 'dark',
+            viewBackgroundColor: '#1e1e2e',
             gridSize: null
           },
           files: {}
